@@ -1,15 +1,43 @@
-# 二面前测试题
+📌 Project: Floor Plan Segmentation and Symbol-Based Equipment Counting (for Startup Engineering Quotation)
 
-1. 输入：图例表图片列表、楼层平面图列表
+🗂️ Inputs:
+	•	A list of legend table images (containing symbols and names)
+	•	A list of floor plan images (showing actual placement of symbols)
 
-2. 输出：设备数量统计列表，列表项包含：ID（自定义）、名称、数量
+🎯 Output:
+	•	A list of equipment counts, each item includes:
+	•	Custom ID
+	•	Name
+	•	Quantity detected across the floor plans
 
-3. 可以使用开源代码或API调用
+🛠️ Tools Allowed:
+	•	Open-source libraries and public APIs may be used
 
-4. 跑通整个流程，对准确率和召回率不做要求，不影响二面资格
+⏱️ Timeline:
+	•	Delivery deadline: within 3 days
 
-5. 时限：3天
+⸻
 
-6. 二面面试将围绕该测试进行提问
+🔧 Implementation Plan
 
+1. Legend Table Recognition
+	•	Table line detection: Use Surya-API to extract table boundaries
+	•	Text recognition: Use PaddleOCR to extract names or labels
+	•	Symbol detection: Use color-based + contour extraction to isolate icon patches
 
+2. Symbol Recognition in Floor Plans
+	•	Symbol detection: Again use color filtering + contour detection
+	•	Symbol classification: Use vector-based similarity, such as:
+	•	CLIP (Contrastive Language–Image Pretraining)
+	•	ViT (Vision Transformer) for robust visual encoding
+
+3. Current Challenges
+	•	Visually similar components:
+	•	Need fine-grained classification (e.g., rectangular vs circular symbols)
+	•	Overlapping symbols:
+	•	Hard to distinguish with basic matching
+
+4. Proposed Solutions
+	•	Synthetic data generation based on legend symbols
+	•	Render synthetic floor plan patches with known symbol placements
+	•	Train a detection or segmentation model (e.g., YOLO, Mask R-CNN) on this synthetic dataset for fine-grained recognition and counting
