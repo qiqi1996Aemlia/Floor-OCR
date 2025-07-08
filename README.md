@@ -41,3 +41,6 @@
 	•	Synthetic data generation based on legend symbols
 	•	Render synthetic floor plan patches with known symbol placements
 	•	Train a detection or segmentation model (e.g., YOLO, Mask R-CNN) on this synthetic dataset for fine-grained recognition and counting
+Results Show:
+![image](https://github.com/user-attachments/assets/53534241-65d1-41a9-b90d-1ef3acbf1907)
+
